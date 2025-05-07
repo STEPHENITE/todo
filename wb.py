@@ -1,3 +1,4 @@
+import streamlit
 import streamlit as stl
 
 import functions
@@ -17,6 +18,6 @@ for index,i in enumerate(todos):
         todos.pop(index)
         functions.write_todos(todos)
         del stl.session_state[i]
-        streamlit.rerun()
+        stl.rerun()
 
 stl.text_input(label="",placeholder="Enter a todo.......",on_change=add_todo,key="new_todo")
